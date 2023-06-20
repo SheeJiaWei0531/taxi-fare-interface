@@ -2,7 +2,7 @@ let taxiFareApiUrl = 'https://jw-oc47rw55ea-ew.a.run.app/predict'; // replace wi
 const centralCoordinates = [-74.00597, 40.71427]; // starting position [lng, lat]
 
 if (window.location.href.includes('https://taxifare.lewagon.com')) {
-  taxiFareApiUrl = 'https://jw-oc47rw55ea-ew.a.run.app/predict';
+  taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict';
 }
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jva3JvYiIsImEiOiJja2YzcmcyNDkwNXVpMnRtZGwxb2MzNWtvIn0.69leM_6Roh26Ju7Lqb2pwQ';
@@ -211,7 +211,7 @@ const predict = () => {
         document.getElementById('fare').classList.remove('d-none');
         const fareResult = document.getElementById('predicted-fare');
         const fare = Math.round(data['fare'] * 100) / 100
-        fareResult.innerText = `$${fare}`;
+        fareResult.innerText = `$${fare_amount.toFixed(2)}`;
       })
       .catch((error) => {
         console.error('Error:', error);
