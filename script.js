@@ -211,7 +211,7 @@ const predict = () => {
         document.getElementById('fare').classList.remove('d-none');
         const fareResult = document.getElementById('predicted-fare');
         const fare = Math.round(data['fare'] * 100) / 100
-        fareResult.innerText = `$${fare}`;
+        fareResult.innerText = `$${fare_amount.toFixed(2)}`;
       })
       .catch((error) => {
         console.error('Error:', error);
